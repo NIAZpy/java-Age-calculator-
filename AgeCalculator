@@ -1,0 +1,22 @@
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Scanner;
+
+
+public class AgeCalculator{
+    public static void main (String[] args){
+    Scanner scanner= new Scanner(System.in );
+    System.out.print("Birth year: ");
+    int year=scanner.nextInt();
+    System.out.println("Insert your birth month: ");
+    int month =scanner.nextInt();
+    System.out.println("Insert your birth day: ");
+    int day =scanner.nextInt();
+    LocalDate birthDate=LocalDate.of(year,month,day);
+    LocalDate CurrentDate=LocalDate.now();
+    Period age = Period.between(birthDate, CurrentDate);
+    System.out.println("you are"+age.getYears()+" years"+age.getMonths()+"months, and"+ age.getDays()+"days old.");
+    
+    
+    }   
+}
